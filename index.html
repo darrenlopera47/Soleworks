@@ -3,7 +3,53 @@
 <title>SOLEWORKS — Shoes built to move</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css"></head>
+<style>
+:root{--k:#0a0a0a;--w:#fff;--g1:#f3f3f3;--g2:#e2e2e2;--g3:#777;--r:#c8281e}
+*{box-sizing:border-box;margin:0}body{font:15px/1.5 Archivo,system-ui,sans-serif;color:var(--k);background:var(--w)}
+a{color:inherit;text-decoration:none}img{max-width:100%;display:block}h1,h2,h3{line-height:1.05;letter-spacing:-.02em}
+h1{font-size:clamp(2.6rem,8vw,6rem);font-stretch:62%;font-weight:900}h2{font-size:1.9rem;font-weight:800;margin-bottom:1rem}
+.wrap{max-width:1180px;margin:auto;padding:0 20px}section{padding:44px 0}
+.bar{background:var(--k);color:#fff;text-align:center;padding:7px;font-size:13px}
+.nav{position:sticky;top:0;z-index:9;background:#fff;border-bottom:1px solid var(--g2);display:flex;align-items:center;gap:22px;padding:12px 20px;flex-wrap:wrap}
+.logo{font-weight:900;font-stretch:62%;font-size:1.7rem;letter-spacing:.02em}.nav nav{display:flex;gap:18px;flex:1}
+.nav nav a,.icons a{padding:4px 0;border-bottom:2px solid transparent;transition:.2s}.nav nav a:hover,.icons a:hover{border-color:var(--k)}
+.search{display:flex}.search input{border:1px solid var(--g2);border-right:0;padding:8px 12px;border-radius:99px 0 0 99px;width:190px}.search button{border-radius:0 99px 99px 0}
+.icons{display:flex;gap:16px;align-items:center}.cart b{background:var(--k);color:#fff;border-radius:99px;padding:1px 8px;font-size:12px}.burger{display:none;background:none;color:var(--k);font-size:22px}
+button,.btn{font:inherit;font-weight:600;background:var(--k);color:#fff;border:1px solid var(--k);padding:10px 20px;border-radius:99px;cursor:pointer;display:inline-block;transition:.2s}
+button:hover,.btn:hover{transform:translateY(-1px);opacity:.85}.btn.o,button.o{background:#fff;color:var(--k)}.sm{padding:5px 12px;font-size:13px}button:disabled{opacity:.35;cursor:not-allowed;transform:none}
+:focus-visible{outline:3px solid #2748a8;outline-offset:2px}
+input,select,textarea{font:inherit;padding:9px 12px;border:1px solid var(--g2);border-radius:8px;width:100%;background:#fff}
+label{display:block;font-weight:600;font-size:13px;margin:10px 0 4px}
+.hero{background:var(--g1);display:grid;grid-template-columns:1.1fr 1fr;align-items:center;gap:20px;padding:50px 20px;max-width:1180px;margin:20px auto;border-radius:20px;overflow:hidden}
+.hero img{animation:fl 5s ease-in-out infinite}@keyframes fl{50%{transform:translateY(-12px) rotate(-3deg)}}.hero p{margin:14px 0 22px;max-width:40ch;color:var(--g3)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:20px}
+.card{border:1px solid var(--g2);border-radius:14px;overflow:hidden;transition:.25s;position:relative;background:#fff}.card:hover{box-shadow:0 12px 30px #0002;transform:translateY(-4px)}
+.card .b{padding:12px 14px}.card small,.mut{color:var(--g3)}.old{text-decoration:line-through;color:var(--g3);margin-left:6px}
+.tag{position:absolute;top:10px;left:10px;background:var(--r);color:#fff;font-size:12px;font-weight:700;padding:2px 9px;border-radius:99px}.tag.k{background:var(--k)}
+.chips{display:flex;gap:10px;flex-wrap:wrap}.chip{border:1px solid var(--g2);padding:8px 16px;border-radius:99px;transition:.2s}.chip:hover,.chip.on{background:var(--k);color:#fff}
+.promo{display:grid;grid-template-columns:1fr 1fr;gap:20px}.promo div{border-radius:16px;padding:36px;background:var(--k);color:#fff}.promo div+div{background:var(--g1);color:var(--k)}.promo h3{font-size:2rem;margin-bottom:8px}
+.quote{background:var(--g1);padding:22px;border-radius:14px}
+.pd{display:grid;grid-template-columns:1fr 1fr;gap:36px}.thumbs{display:flex;gap:10px;margin-top:10px}.thumbs img{width:80px;border:2px solid var(--g2);border-radius:8px;cursor:pointer}.thumbs img.on{border-color:var(--k)}
+.opt{display:flex;gap:8px;flex-wrap:wrap}.opt button{background:#fff;color:var(--k);border-color:var(--g2);padding:7px 14px;border-radius:8px}.opt button.on{background:var(--k);color:#fff;border-color:var(--k)}.opt button:disabled{text-decoration:line-through}
+.sw{width:30px;height:30px;padding:0;border-radius:50%;border:2px solid var(--g2)!important}.sw.on{outline:2px solid var(--k);outline-offset:2px}
+.qty{display:inline-flex;align-items:center;gap:8px}.qty button{padding:4px 12px}.qty span{min-width:24px;text-align:center}
+.two{display:grid;grid-template-columns:1.6fr 1fr;gap:30px}.box{border:1px solid var(--g2);border-radius:14px;padding:20px}
+.line{display:grid;grid-template-columns:90px 1fr auto;gap:14px;align-items:center;padding:14px 0;border-bottom:1px solid var(--g2)}
+.row{display:flex;justify-content:space-between;padding:5px 0}.tot{font-weight:800;font-size:1.2rem;border-top:1px solid var(--k);margin-top:8px;padding-top:10px}
+.shop{display:grid;grid-template-columns:220px 1fr;gap:28px}.fgrp a{display:block;padding:4px 0;color:var(--g3)}.fgrp a.on,.fgrp a:hover{color:var(--k);font-weight:700}
+.pay label{display:flex;gap:10px;align-items:center;border:1px solid var(--g2);padding:12px;border-radius:10px;font-weight:500}.pay input{width:auto}
+.f2{display:grid;grid-template-columns:1fr 1fr;gap:0 14px}.err{color:var(--r);font-size:13px;margin-top:6px}
+table{width:100%;border-collapse:collapse;font-size:14px}th,td{text-align:left;padding:9px 8px;border-bottom:1px solid var(--g2)}th{background:var(--g1)}.scroll{overflow-x:auto}
+.adm{display:grid;grid-template-columns:200px 1fr;gap:26px}.side a{display:block;padding:9px 12px;border-radius:8px}.side a.on,.side a:hover{background:var(--k);color:#fff}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:14px;margin-bottom:22px}.stat{background:var(--g1);border-radius:14px;padding:18px}.stat b{font-size:1.7rem;display:block}
+.bars div{display:flex;align-items:center;gap:10px;margin:6px 0}.bars i{display:block;height:16px;background:var(--k);border-radius:4px}
+.track{display:flex;gap:6px;margin:8px 0}.track i{flex:1;height:6px;background:var(--g2);border-radius:4px}.track i.on{background:var(--k)}
+.st{font-size:12px;font-weight:700;padding:2px 10px;border-radius:99px;background:var(--g2)}
+footer{background:var(--k);color:#fff;margin-top:50px;padding:40px 0 14px}.fgrid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:20px}footer a,footer p{display:block;color:#bbb;padding:3px 0}footer a:hover{color:#fff}footer .copy{text-align:center;margin-top:24px;font-size:12px}
+#toast{position:fixed;bottom:20px;left:50%;transform:translate(-50%,80px);background:var(--k);color:#fff;padding:12px 22px;border-radius:99px;transition:.3s;z-index:20}#toast.on{transform:translate(-50%,0)}
+@media(max-width:820px){.hero,.pd,.two,.shop,.adm,.promo{grid-template-columns:1fr}.burger{display:block;margin-left:auto}.nav nav,.search{display:none;width:100%}.menu .nav nav{display:flex;flex-direction:column}.menu .search{display:flex}.search input{flex:1}.f2,.fgrid{grid-template-columns:1fr}.side{display:flex;overflow-x:auto}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style></head>
 <body>
 <div class="bar">Free shipping on orders over ₱5,000 · Use size guide US 6–12</div>
 <header class="nav"><a class="logo" href="#/">SOLEWORKS</a>
@@ -17,17 +63,121 @@
 <div><b>Follow</b><a href="#" onclick="return false">Facebook</a><a href="#" onclick="return false">Instagram</a><a href="#" onclick="return false">TikTok</a></div></div>
 <p class="copy">© 2026 SOLEWORKS. Demo store — data is saved in your browser.</p></footer>
 <div id="toast"></div>
-<script src="js/config.js"></script>
-<script src="js/utils.js"></script>
-<script src="js/data.js"></script>
-<script src="js/state.js"></script>
-<script src="js/store.js"></script>
-<script src="js/views-store.js"></script>
-<script src="js/views-checkout.js"></script>
-<script src="js/views-account.js"></script>
-<script src="js/views-admin.js"></script>
-<script src="js/actions-shop.js"></script>
-<script src="js/actions-account.js"></script>
-<script src="js/actions-admin.js"></script>
-<script src="js/debug.js"></script>
-<script src="js/router.js"></script></body></html>
+<script>
+/* SOLEWORKS shoe store — front-end only. "Database" lives in localStorage. Demo admin: admin@soleworks.com / admin123 */
+const COL={Black:'#111',White:'#f4f4f4',Gray:'#9a9a9a',Red:'#c8281e',Blue:'#2748a8',Tan:'#b98a5a'};
+const SZ=[6,7,8,9,10,11,12],ST=['Pending','Processing','Shipped','Delivered','Cancelled'];
+const $=s=>document.querySelector(s),esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const peso=n=>'₱'+Number(n).toLocaleString(),A=window.A={},S={size:null,color:null,img:0,edit:null};
+const sha=async s=>[...new Uint8Array(await crypto.subtle.digest('SHA-256',new TextEncoder().encode(s)))].map(b=>b.toString(16).padStart(2,'0')).join('');
+function shoe(c,v=0){const f=COL[c]||c;return 'data:image/svg+xml,'+encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300"><rect width="400" height="300" fill="${['#f1f1f1','#e4e4e4','#fafafa'][v]}"/><g transform="rotate(${[0,-6,6][v]} 200 160)"><path d="M60 200c0-30 10-60 30-70l40-20c10 20 30 30 50 30 20 0 35-10 45-25l50 30c25 12 45 30 45 55v20H60z" fill="${f}"/><path d="M55 205h300c5 0 8 4 8 10v10c0 8-6 12-14 12H65c-8 0-12-6-12-14z" fill="#fff" stroke="#222" stroke-width="3"/><path d="M135 122l20 28M165 135l18 24" stroke="#fff" stroke-width="5" opacity=".6"/></g></svg>`)}
+function seed(){let id=0;const P=(name,brand,cats,price,sale,colors,stock,fl)=>({id:++id,name,brand,cats,price,sale,colors,stock,fl,desc:`${name} by ${brand}: lightweight cushioning, durable outsole and a clean silhouette made for all-day wear.`,rating:+(4+Math.random()*.9).toFixed(1),reviews:[{u:'Marco D.',r:5,t:'Super comfy right out of the box.'},{u:'Aira L.',r:4,t:'Great fit, fast delivery.'}]});
+return{cats:["Men's Shoes","Women's Shoes","Sneakers","Running Shoes","Basketball Shoes","Casual Shoes","Formal Shoes","Sports Shoes"],
+products:[P('Aero Runner 2','Soleworks',["Men's Shoes",'Running Shoes','Sports Shoes'],5499,4399,['Black','Red','Gray'],24,'fnb'),P('Cloud Lite','Soleworks',["Women's Shoes",'Running Shoes'],4999,0,['White','Blue'],18,'fb'),P('Court King','Soleworks',["Men's Shoes",'Basketball Shoes','Sports Shoes'],6299,5499,['Black','White','Red'],12,'fb'),P('Street Low','Soleworks',['Sneakers',"Women's Shoes",'Casual Shoes'],3799,0,['White','Tan'],30,'fn'),P('Oxford Classic','Atelier',['Formal Shoes',"Men's Shoes"],7499,6299,['Black','Tan'],9,'f'),P('Loafer Soft','Atelier',['Formal Shoes','Casual Shoes',"Women's Shoes"],5299,0,['Tan','Black'],14,'b'),P('Dunk Rise','Soleworks',['Basketball Shoes','Sneakers'],5899,0,['Red','White'],0,'n'),P('Trail Pulse','Stride',['Running Shoes','Sports Shoes',"Men's Shoes"],4699,3999,['Gray','Blue'],20,'b'),P('Daily Canvas','Stride',['Casual Shoes','Sneakers'],2499,1999,['White','Blue','Black'],40,'bn'),P('Velocity W','Stride',["Women's Shoes",'Sneakers','Running Shoes'],4299,0,['Gray','White'],16,'fn'),P('Metro Derby','Atelier',['Formal Shoes'],6899,0,['Black'],7,''),P('Hoop Elite','Stride',['Basketball Shoes','Sports Shoes'],6999,5999,['Black','Blue'],11,'b')].map(p=>({...p,img:p.colors})),
+users:[{id:1,name:'Admin',email:'admin@soleworks.com',phone:'',role:'admin',hash:'',addrs:[]}],orders:[],cart:[],session:null}}
+let db=JSON.parse(localStorage.getItem('soleworks')||'null');
+const save=()=>localStorage.setItem('soleworks',JSON.stringify(db)),me=()=>db.users.find(u=>u.id===db.session),prod=id=>db.products.find(p=>p.id==id),pr=p=>p.sale||p.price,toast=m=>{const t=$('#toast');t.textContent=m;t.className='on';setTimeout(()=>t.className='',2200)};
+const go=h=>location.hash=h,stars=r=>'★'.repeat(Math.round(r))+'☆'.repeat(5-Math.round(r));
+const cartLines=()=>db.cart.map(c=>({...c,p:prod(c.pid)})).filter(c=>c.p);
+const totals=()=>{const sub=cartLines().reduce((s,c)=>s+pr(c.p)*c.qty,0),ship=!sub?0:sub>=5000?0:150;return{sub,ship,total:sub+ship}};
+function card(p){const out=!p.stock;return`<a class="card" href="#/p/${p.id}">${out?'<span class="tag k">Sold out</span>':p.sale?`<span class="tag">-${Math.round(100-p.sale/p.price*100)}%</span>`:''}<img src="${shoe(p.colors[0])}" alt="${esc(p.name)}" loading="lazy"><div class="b"><small>${esc(p.brand)}</small><h3 style="font-size:1.05rem">${esc(p.name)}</h3><span class="mut">${stars(p.rating)}</span><div><b>${peso(pr(p))}</b>${p.sale?`<span class="old">${peso(p.price)}</span>`:''}</div></div></a>`}
+const sect=(t,l,link='#/shop')=>`<section class="wrap"><div class="row"><h2>${t}</h2><a href="${link}" class="mut">View all</a></div><div class="grid">${l.slice(0,4).map(card).join('')}</div></section>`;
+/* ---------- pages ---------- */
+const V={};
+V.home=()=>{const f=k=>db.products.filter(p=>p.fl.includes(k));return`<div class="hero"><div><h1>Run the<br>whole city.</h1><p>The Autumn 2026 collection: lighter midsoles, bolder colours, and sizes US 6–12 ready to ship.</p><a class="btn" href="#/shop">Shop the collection</a></div><img src="${shoe('Red',1)}" alt="Aero Runner"></div>
+<section class="wrap"><div class="chips">${db.cats.map(c=>`<a class="chip" href="#/shop?cat=${encodeURIComponent(c)}">${esc(c)}</a>`).join('')}</div></section>
+${sect('Featured products',f('f'))}${sect('Best sellers',f('b'),'#/shop?sort=rating')}
+<section class="wrap promo"><div><h3>Up to 25% off</h3><p>Selected running and basketball pairs, while stocks last.</p><br><a class="btn o" href="#/shop?cat=Running Shoes">Shop running</a></div><div><h3>Free shipping</h3><p>On every order over ₱5,000. Pay with COD, GCash or card.</p></div></section>
+${sect('New arrivals',f('n'))}
+<section class="wrap"><h2>What customers say</h2><div class="grid">${[['Marco D.','The Aero Runner survived my first half-marathon. No blisters.'],['Aira L.','Cloud Lite is the lightest shoe I own. Delivery took two days.'],['Jun P.','Oxford Classic looks premium at a fair price. Sizing was spot on.']].map(q=>`<div class="quote"><p>“${q[1]}”</p><br><b>${q[0]}</b> <span class="mut">${stars(5)}</span></div>`).join('')}</div></section>`};
+V.categories=()=>`<section class="wrap"><h2>Categories</h2><div class="grid">${db.cats.map(c=>{const n=db.products.filter(p=>p.cats.includes(c));return`<a class="card" href="#/shop?cat=${encodeURIComponent(c)}"><img src="${shoe(n[0]?.colors[0]||'Gray',2)}" alt=""><div class="b"><h3>${esc(c)}</h3><span class="mut">${n.length} styles</span></div></a>`}).join('')}</div></section>`;
+V.shop=q=>{const cat=q.get('cat')||'',s=q.get('q')||'',so=q.get('sort')||'';let l=db.products.filter(p=>(!cat||p.cats.includes(cat))&&(!s||(p.name+p.brand+p.cats.join()).toLowerCase().includes(s.toLowerCase())));
+if(so=='low')l.sort((a,b)=>pr(a)-pr(b));if(so=='high')l.sort((a,b)=>pr(b)-pr(a));if(so=='rating')l.sort((a,b)=>b.rating-a.rating);
+return`<section class="wrap shop"><aside class="fgrp"><h3>Category</h3><a href="#/shop" class="${cat?'':'on'}">All shoes</a>${db.cats.map(c=>`<a class="${c==cat?'on':''}" href="#/shop?cat=${encodeURIComponent(c)}">${esc(c)}</a>`).join('')}<br><label>Sort by</label><select onchange="A.sort(this.value)"><option value="">Featured</option>${[['low','Price: low to high'],['high','Price: high to low'],['rating','Top rated']].map(o=>`<option value="${o[0]}" ${so==o[0]?'selected':''}>${o[1]}</option>`).join('')}</select></aside>
+<div><h2>${esc(cat||(s?`Results for “${s}”`:'All shoes'))} <span class="mut" style="font-size:1rem">${l.length} items</span></h2>${l.length?`<div class="grid">${l.map(card).join('')}</div>`:'<p>No shoes match. Try another category or search term.</p>'}</div></section>`};
+V.p=(q,id)=>{const p=prod(id);if(!p)return'<section class="wrap"><h2>Shoe not found</h2></section>';if(S.pid!=id){S.pid=id;S.size=null;S.color=p.colors[0];S.img=0}
+return`<section class="wrap pd"><div><img id="main" src="${shoe(S.color,S.img)}" alt="${esc(p.name)}" style="border-radius:16px;width:100%"><div class="thumbs">${[0,1,2].map(i=>`<img class="${i==S.img?'on':''}" src="${shoe(S.color,i)}" alt="View ${i+1}" onclick="A.img(${i})">`).join('')}</div></div>
+<div><small class="mut">${esc(p.brand)}</small><h1 style="font-size:2.6rem">${esc(p.name)}</h1><p><span class="mut">${stars(p.rating)} ${p.rating} (${p.reviews.length} reviews)</span></p><p style="font-size:1.5rem;margin:8px 0"><b>${peso(pr(p))}</b>${p.sale?`<span class="old">${peso(p.price)}</span>`:''}</p><p>${esc(p.desc)}</p>
+<label>Colour: ${S.color}</label><div class="opt">${p.colors.map(c=>`<button class="sw ${c==S.color?'on':''}" style="background:${COL[c]}" aria-label="${c}" onclick="A.col('${c}')"></button>`).join('')}</div>
+<label>Size (US)</label><div class="opt">${SZ.map(s=>`<button class="${s==S.size?'on':''}" onclick="A.sz(${s})">${s}</button>`).join('')}</div>
+<p style="margin:14px 0"><b>${p.stock?(p.stock<10?`Only ${p.stock} left`:'In stock'):'Out of stock'}</b></p>
+<div class="qty"><button class="o sm" onclick="A.q(-1)">−</button><span id="qv">1</span><button class="o sm" onclick="A.q(1)">+</button></div><br><br>
+<button ${p.stock?'':'disabled'} onclick="A.add(${p.id})">Add to cart</button> <button class="o" ${p.stock?'':'disabled'} onclick="A.add(${p.id},1)">Buy now</button></div></section>
+<section class="wrap"><h2>Reviews</h2>${p.reviews.map(r=>`<div class="quote" style="margin-bottom:10px"><b>${esc(r.u)}</b> <span class="mut">${stars(r.r)}</span><p>${esc(r.t)}</p></div>`).join('')}
+${me()?`<form onsubmit="A.review(event,${p.id})" class="box"><label>Your rating</label><select name="r">${[5,4,3,2,1].map(n=>`<option>${n}</option>`).join('')}</select><label>Review</label><textarea name="t" required minlength="5"></textarea><br><br><button>Post review</button></form>`:'<p><a href="#/login"><u>Sign in</u></a> to write a review.</p>'}</section>`};
+V.cart=()=>{const L=cartLines(),t=totals();if(!L.length)return'<section class="wrap"><h2>Your cart is empty</h2><a class="btn" href="#/shop">Start shopping</a></section>';
+return`<section class="wrap"><h2>Shopping cart</h2><div class="two"><div>${L.map((c,i)=>`<div class="line"><img src="${shoe(c.color)}" alt=""><div><b>${esc(c.p.name)}</b><br><span class="mut">${peso(pr(c.p))}</span><div class="f2" style="max-width:260px"><div><label>Size</label><select onchange="A.upd(${i},'size',+this.value)">${SZ.map(s=>`<option ${s==c.size?'selected':''}>${s}</option>`).join('')}</select></div><div><label>Colour</label><select onchange="A.upd(${i},'color',this.value)">${c.p.colors.map(x=>`<option ${x==c.color?'selected':''}>${x}</option>`).join('')}</select></div></div></div>
+<div style="text-align:right"><b>${peso(pr(c.p)*c.qty)}</b><br><div class="qty"><button class="o sm" onclick="A.cq(${i},-1)">−</button><span>${c.qty}</span><button class="o sm" onclick="A.cq(${i},1)">+</button></div><br><a href="#" class="mut" onclick="A.rm(${i});return false">Remove</a></div></div>`).join('')}</div>
+<div class="box"><h3>Order summary</h3><div class="row"><span>Subtotal</span><span>${peso(t.sub)}</span></div><div class="row"><span>Shipping</span><span>${t.ship?peso(t.ship):'Free'}</span></div><div class="row tot"><span>Total</span><span>${peso(t.total)}</span></div><br><a class="btn" href="#/checkout" style="width:100%;text-align:center">Proceed to checkout</a></div></div></section>`};
+V.checkout=()=>{const u=me();if(!u){S.next='#/checkout';toast('Sign in to check out');return V.login()}const L=cartLines(),t=totals();if(!L.length)return V.cart();
+return`<section class="wrap"><h2>Checkout</h2><div class="two"><form id="co" onsubmit="A.order(event)" novalidate><div class="box"><h3>Customer information</h3><div class="f2"><div><label>Full name</label><input name="name" value="${esc(u.name)}"></div><div><label>Phone</label><input name="phone" value="${esc(u.phone)}" placeholder="09XXXXXXXXX"></div></div><label>Email</label><input name="email" value="${esc(u.email)}">
+<h3 style="margin-top:18px">Shipping address</h3>${u.addrs.length?`<label>Saved addresses</label><select onchange="A.fill(this.value)"><option value="">Choose…</option>${u.addrs.map((a,i)=>`<option value="${i}">${esc(a.address)}, ${esc(a.city)}</option>`).join('')}</select>`:''}<label>Street address</label><input name="address"><div class="f2"><div><label>City</label><input name="city"></div><div><label>Postal code</label><input name="zip"></div></div>
+<h3 style="margin-top:18px">Payment method</h3><div class="pay">${['Cash on Delivery','GCash','Credit/Debit Card'].map((m,i)=>`<label><input type="radio" name="pay" value="${m}" ${i?'':'checked'} onchange="$('#card').hidden=this.value!='Credit/Debit Card'">${m}</label>`).join('')}</div>
+<div id="card" hidden><label>Card number</label><input name="cn" inputmode="numeric" maxlength="19" placeholder="1234 5678 9012 3456"><div class="f2"><div><label>Expiry (MM/YY)</label><input name="ex" placeholder="08/28"></div><div><label>CVV</label><input name="cv" maxlength="4" type="password"></div></div></div>
+<div class="err" id="err"></div><br><button>Place order · ${peso(t.total)}</button></div></form>
+<div class="box"><h3>Order summary</h3>${L.map(c=>`<div class="row"><span>${esc(c.p.name)} (${c.size||'—'}, ${c.color}) ×${c.qty}</span><span>${peso(pr(c.p)*c.qty)}</span></div>`).join('')}<div class="row"><span>Shipping</span><span>${t.ship?peso(t.ship):'Free'}</span></div><div class="row tot"><span>Total</span><span>${peso(t.total)}</span></div></div></div></section>`};
+V.done=(q,id)=>`<section class="wrap" style="text-align:center;max-width:560px"><h1 style="font-size:3rem">Order placed</h1><p>Thanks! Your order <b>${esc(id)}</b> is confirmed. We'll update its status in your account.</p><br><a class="btn" href="#/account/orders">Track order</a> <a class="btn o" href="#/shop">Keep shopping</a></section>`;
+V.login=()=>`<section class="wrap" style="max-width:820px"><div class="pd"><form onsubmit="A.login(event)" class="box"><h2>Sign in</h2><label>Email</label><input name="email" type="email" required><label>Password</label><input name="pw" type="password" required><div class="err" id="e1"></div><br><button>Sign in</button><p class="mut" style="margin-top:10px">Demo admin: admin@soleworks.com / admin123</p></form>
+<form onsubmit="A.reg(event)" class="box"><h2>Create account</h2><label>Full name</label><input name="name" required minlength="2"><label>Email</label><input name="email" type="email" required><label>Phone</label><input name="phone" placeholder="09XXXXXXXXX"><label>Password (min 6)</label><input name="pw" type="password" required minlength="6"><div class="err" id="e2"></div><br><button>Register</button></form></div></section>`;
+const tr=o=>{const i=ST.indexOf(o.status);return o.status=='Cancelled'?'<span class="st">Cancelled</span>':`<div class="track">${ST.slice(0,4).map((s,k)=>`<i class="${k<=i?'on':''}" title="${s}"></i>`).join('')}</div>`};
+V.account=(q,tab='profile')=>{const u=me();if(!u)return V.login();const tabs=`<div class="chips" style="margin-bottom:20px">${['profile','orders','addresses'].map(t=>`<a class="chip ${t==tab?'on':''}" href="#/account/${t}">${t[0].toUpperCase()+t.slice(1)}</a>`).join('')}<a class="chip" href="#" onclick="A.logout();return false">Log out</a></div>`;let b='';
+if(tab=='profile')b=`<form onsubmit="A.prof(event)" class="box" style="max-width:480px"><label>Name</label><input name="name" value="${esc(u.name)}" required><label>Phone</label><input name="phone" value="${esc(u.phone)}"><label>Email</label><input value="${esc(u.email)}" disabled><label>New password (optional)</label><input name="pw" type="password" minlength="6"><br><br><button>Save profile</button></form>`;
+if(tab=='orders'){const l=db.orders.filter(o=>o.uid==u.id).reverse();b=l.length?l.map(o=>`<div class="box" style="margin-bottom:12px"><div class="row"><b>${o.id}</b><span class="st">${o.status}</span></div>${tr(o)}<p class="mut">${o.date} · ${o.pay} · ${peso(o.total)}</p>${o.items.map(i=>`<div>${esc(i.name)} (${i.size||'—'}, ${i.color}) ×${i.qty}</div>`).join('')}</div>`).join(''):'<p>No orders yet.</p>'}
+if(tab=='addresses')b=`${u.addrs.map((a,i)=>`<div class="box row" style="margin-bottom:10px"><span>${esc(a.address)}, ${esc(a.city)} ${esc(a.zip)}</span><a href="#" onclick="A.deladdr(${i});return false">Remove</a></div>`).join('')}<form onsubmit="A.addr(event)" class="box" style="max-width:480px"><label>Street address</label><input name="address" required><div class="f2"><div><label>City</label><input name="city" required></div><div><label>Postal code</label><input name="zip" required></div></div><br><button>Save address</button></form>`;
+return`<section class="wrap"><h2>My account</h2>${tabs}${b}</section>`};
+V.about=()=>`<section class="wrap" style="max-width:700px"><h1 style="font-size:3.4rem">Built to move.</h1><p style="margin-top:14px">SOLEWORKS started as a small Cavite shop with one rule: sell only shoes we'd wear ourselves. Today we carry running, court, casual and formal pairs in US sizes 6–12 and ship nationwide.</p></section>`;
+V.contact=()=>`<section class="wrap" style="max-width:520px"><h2>Contact us</h2><form onsubmit="event.preventDefault();event.target.reset();toast('Message sent. We reply within one business day.')"><label>Name</label><input required><label>Email</label><input type="email" required><label>Message</label><textarea rows="5" required></textarea><br><br><button>Send message</button></form></section>`;
+/* admin */
+V.admin=(q,tab='dash')=>{const u=me();if(!u||u.role!='admin'){toast('Admin access only');return V.login()}
+const live=db.orders.filter(o=>o.status!='Cancelled'),sales=live.reduce((s,o)=>s+o.total,0),cust=db.users.filter(u=>u.role=='customer'),T={
+dash:()=>`<div class="stats"><div class="stat"><b>${peso(sales)}</b>Total sales</div><div class="stat"><b>${db.orders.length}</b>Total orders</div><div class="stat"><b>${cust.length}</b>Customers</div><div class="stat"><b>${db.products.filter(p=>p.stock<5).length}</b>Low / no stock</div></div><h3>Recent orders</h3>${T.ord(db.orders.slice(-5).reverse())}`,
+ord:l=>`<div class="scroll"><table><tr><th>Order</th><th>Customer</th><th>Total</th><th>Payment</th><th>Status</th></tr>${l.map(o=>`<tr><td>${o.id}<br><small class="mut">${o.date}</small></td><td>${esc(o.name)}</td><td>${peso(o.total)}</td><td>${o.pay}</td><td><select onchange="A.status('${o.id}',this.value)">${ST.map(s=>`<option ${s==o.status?'selected':''}>${s}</option>`).join('')}</select></td></tr>`).join('')||'<tr><td colspan=5>No orders yet.</td></tr>'}</table></div>`,
+orders:()=>T.ord([...db.orders].reverse()),
+products:()=>{const e=S.edit?prod(S.edit):null,v=(k,d='')=>esc(e?e[k]:d);return`<form onsubmit="A.saveP(event)" class="box" style="margin-bottom:20px"><h3>${e?'Edit':'Add'} product</h3><div class="f2"><div><label>Name</label><input name="name" required value="${v('name')}"></div><div><label>Brand</label><input name="brand" required value="${v('brand')}"></div><div><label>Price (₱)</label><input name="price" type="number" min="1" required value="${v('price')}"></div><div><label>Sale price (₱, optional)</label><input name="sale" type="number" min="0" value="${v('sale')}"></div><div><label>Stock</label><input name="stock" type="number" min="0" required value="${v('stock',10)}"></div><div><label>Colours (comma separated)</label><input name="colors" value="${esc(e?e.colors.join(','):'Black,White')}"></div></div><label>Categories (hold Ctrl/Cmd)</label><select name="cats" multiple size="4">${db.cats.map(c=>`<option ${e&&e.cats.includes(c)?'selected':''}>${esc(c)}</option>`).join('')}</select><label>Description</label><textarea name="desc">${v('desc')}</textarea><br><br><button>${e?'Update':'Add product'}</button> ${e?'<button type="button" class="o" onclick="S.edit=null;route()">Cancel</button>':''}</form>
+<div class="scroll"><table><tr><th>Product</th><th>Price</th><th>Stock</th><th></th></tr>${db.products.map(p=>`<tr><td>${esc(p.name)}<br><small class="mut">${esc(p.cats.join(', '))}</small></td><td>${peso(pr(p))}</td><td>${p.stock}</td><td><button class="o sm" onclick="S.edit=${p.id};route()">Edit</button> <button class="o sm" onclick="A.delP(${p.id})">Delete</button></td></tr>`).join('')}</table></div>`},
+cats:()=>`<form onsubmit="A.addCat(event)" class="box" style="margin-bottom:16px;display:flex;gap:10px"><input name="c" placeholder="New category" required><button>Add</button></form><table>${db.cats.map((c,i)=>`<tr><td>${esc(c)}</td><td>${db.products.filter(p=>p.cats.includes(c)).length} products</td><td><button class="o sm" onclick="A.delCat(${i})">Delete</button></td></tr>`).join('')}</table>`,
+inventory:()=>`<div class="scroll"><table><tr><th>Product</th><th>Status</th><th>Stock</th></tr>${db.products.map(p=>`<tr><td>${esc(p.name)}</td><td>${p.stock?p.stock<5?'Low':'OK':'Out of stock'}</td><td><input type="number" min="0" value="${p.stock}" style="width:90px" onchange="A.stock(${p.id},this.value)"></td></tr>`).join('')}</table></div>`,
+customers:()=>`<div class="scroll"><table><tr><th>Name</th><th>Email</th><th>Orders</th><th>Spent</th></tr>${cust.map(c=>{const o=live.filter(o=>o.uid==c.id);return`<tr><td>${esc(c.name)}</td><td>${esc(c.email)}</td><td>${o.length}</td><td>${peso(o.reduce((s,x)=>s+x.total,0))}</td></tr>`}).join('')||'<tr><td colspan=4>No customers yet.</td></tr>'}</table></div>`,
+reports:()=>{const by={},un={};live.forEach(o=>o.items.forEach(i=>{un[i.name]=(un[i.name]||0)+i.qty;i.cats.forEach(c=>by[c]=(by[c]||0)+i.price*i.qty)}));const bar=(m,f)=>{const e=Object.entries(m).sort((a,b)=>b[1]-a[1]),mx=e[0]?.[1]||1;return e.length?`<div class="bars">${e.map(([k,v])=>`<div><span style="width:150px">${esc(k)}</span><i style="width:${v/mx*60}%"></i>${f(v)}</div>`).join('')}</div>`:'<p class="mut">No sales yet.</p>'};return`<div class="stats"><div class="stat"><b>${peso(sales)}</b>Revenue</div><div class="stat"><b>${live.length?peso(Math.round(sales/live.length)):'₱0'}</b>Avg. order</div></div><h3>Revenue by category</h3>${bar(by,peso)}<br><h3>Units by product</h3>${bar(un,v=>v)}`}};
+const nm={dash:'Overview',products:'Products',cats:'Categories',inventory:'Inventory',orders:'Orders',customers:'Customers',reports:'Sales reports'};
+return`<section class="wrap adm"><aside class="side">${Object.keys(nm).map(k=>`<a class="${k==tab?'on':''}" href="#/admin/${k}">${nm[k]}</a>`).join('')}</aside><div><h2>${nm[tab]}</h2>${T[tab]()}</div></section>`};
+/* ---------- actions ---------- */
+A.search=e=>{e.preventDefault();go('/shop?q='+encodeURIComponent($('#q').value))};
+A.sort=v=>{const q=new URLSearchParams(location.hash.split('?')[1]||'');q.set('sort',v);go('/shop?'+q)};
+A.img=i=>{S.img=i;route()};A.col=c=>{S.color=c;route()};A.sz=s=>{S.size=s;route()};A.q=d=>{const v=$('#qv');v.textContent=Math.max(1,+v.textContent+d)};
+A.add=(id,buy)=>{const p=prod(id),qty=+$('#qv').textContent;if(!S.size)return toast('Please choose a size');const ex=db.cart.find(c=>c.pid==id&&c.size==S.size&&c.color==S.color),have=db.cart.filter(c=>c.pid==id).reduce((s,c)=>s+c.qty,0);
+if(have+qty>p.stock)return toast(`Only ${p.stock} in stock`);ex?ex.qty+=qty:db.cart.push({pid:id,size:S.size,color:S.color,qty});save();badge();buy?go('/cart'):toast('Added to cart')};
+A.cq=(i,d)=>{const c=db.cart[i],p=prod(c.pid);if(c.qty+d<1)return;if(db.cart.filter(x=>x.pid==c.pid).reduce((s,x)=>s+x.qty,0)+d>p.stock)return toast(`Only ${p.stock} in stock`);c.qty+=d;save();route()};
+A.upd=(i,k,v)=>{db.cart[i][k]=v;save();route()};A.rm=i=>{db.cart.splice(i,1);save();badge();route()};
+A.review=(e,id)=>{e.preventDefault();const p=prod(id),f=e.target;p.reviews.push({u:me().name,r:+f.r.value,t:f.t.value});p.rating=+(p.reviews.reduce((s,r)=>s+r.r,0)/p.reviews.length).toFixed(1);save();route();toast('Review posted')};
+A.fill=i=>{if(i==='')return;const a=me().addrs[i],f=$('#co');f.address.value=a.address;f.city.value=a.city;f.zip.value=a.zip};
+A.order=e=>{e.preventDefault();const f=e.target,v=n=>f[n].value.trim(),er=m=>($('#err').textContent=m,0),L=cartLines(),t=totals(),pay=f.pay.value;
+if(v('name').length<2)return er('Enter your full name.');if(!/^\S+@\S+\.\S+$/.test(v('email')))return er('Enter a valid email.');if(!/^(09|\+639)\d{9}$/.test(v('phone').replace(/\s/g,'')))return er('Enter a valid PH mobile number (09XXXXXXXXX).');if(v('address').length<5||!v('city')||!/^\d{4}$/.test(v('zip')))return er('Complete the address (4-digit postal code).');
+if(pay.startsWith('Credit')&&(!/^\d{16}$/.test(v('cn').replace(/\s/g,''))||!/^(0[1-9]|1[0-2])\/\d{2}$/.test(v('ex'))||!/^\d{3,4}$/.test(v('cv'))))return er('Check your card number, expiry (MM/YY) and CVV.');
+for(const c of L){const n=L.filter(x=>x.pid==c.pid).reduce((s,x)=>s+x.qty,0);if(!c.size)return er(`Choose a size for ${c.p.name} in your cart.`);if(n>c.p.stock)return er(`${c.p.name} has only ${c.p.stock} left.`)}
+const o={id:'SW'+Date.now().toString().slice(-7),uid:me().id,name:v('name'),email:v('email'),phone:v('phone'),addr:`${v('address')}, ${v('city')} ${v('zip')}`,pay:pay.startsWith('Credit')?'Card ••••'+v('cn').replace(/\s/g,'').slice(-4):pay,items:L.map(c=>({pid:c.pid,name:c.p.name,cats:c.p.cats,size:c.size,color:c.color,qty:c.qty,price:pr(c.p)})),total:t.total,status:'Pending',date:new Date().toLocaleDateString()};
+L.forEach(c=>c.p.stock-=c.qty);db.orders.push(o);db.cart=[];save();badge();go('/done/'+o.id)};
+A.login=async e=>{e.preventDefault();const f=e.target,u=db.users.find(x=>x.email==f.email.value.trim().toLowerCase());if(!u||u.hash!=await sha(u.email+f.pw.value))return $('#e1').textContent='Email or password is incorrect.';db.session=u.id;save();badge();const n=S.next;S.next=null;go(n?n.slice(1):u.role=='admin'?'/admin/dash':'/account/orders')};
+A.reg=async e=>{e.preventDefault();const f=e.target,em=f.email.value.trim().toLowerCase(),er=m=>$('#e2').textContent=m;if(db.users.some(u=>u.email==em))return er('That email is already registered.');if(f.pw.value.length<6)return er('Password needs at least 6 characters.');if(f.phone.value&&!/^(09|\+639)\d{9}$/.test(f.phone.value))return er('Enter a valid PH mobile number.');
+const u={id:Date.now(),name:f.name.value.trim(),email:em,phone:f.phone.value,role:'customer',hash:await sha(em+f.pw.value),addrs:[]};db.users.push(u);db.session=u.id;save();badge();const n=S.next;S.next=null;go(n?n.slice(1):'/account/profile')};
+A.logout=()=>{db.session=null;save();badge();go('/')};
+A.prof=async e=>{e.preventDefault();const f=e.target,u=me();u.name=f.name.value.trim();u.phone=f.phone.value;if(f.pw.value)u.hash=await sha(u.email+f.pw.value);save();badge();toast('Profile saved')};
+A.addr=e=>{e.preventDefault();const f=e.target;me().addrs.push({address:f.address.value,city:f.city.value,zip:f.zip.value});save();route()};A.deladdr=i=>{me().addrs.splice(i,1);save();route()};
+A.status=(id,s)=>{const o=db.orders.find(x=>x.id==id);if(o.status=='Cancelled')return toast('Cancelled orders are locked'),route();if(s=='Cancelled')o.items.forEach(i=>{const p=prod(i.pid);if(p)p.stock+=i.qty});o.status=s;save();toast('Status updated');route()};
+A.saveP=e=>{e.preventDefault();const f=e.target,d={name:f.name.value.trim(),brand:f.brand.value.trim(),price:+f.price.value,sale:+f.sale.value||0,stock:+f.stock.value,colors:f.colors.value.split(',').map(s=>s.trim()).filter(c=>COL[c]),cats:[...f.cats.selectedOptions].map(o=>o.value),desc:f.desc.value};
+if(d.sale>=d.price)return toast('Sale price must be below the regular price');if(!d.colors.length)return toast('Use colours: '+Object.keys(COL).join(', '));if(!d.cats.length)return toast('Pick a category');
+if(S.edit)Object.assign(prod(S.edit),d);else db.products.push({id:Date.now(),fl:'n',rating:4.5,reviews:[],...d});S.edit=null;save();route();toast('Product saved')};
+A.delP=id=>{if(confirm('Delete this product?')){db.products=db.products.filter(p=>p.id!=id);db.cart=db.cart.filter(c=>c.pid!=id);save();route()}};
+A.stock=(id,v)=>{prod(id).stock=Math.max(0,+v);save();toast('Stock updated');route()};
+A.addCat=e=>{e.preventDefault();const c=e.target.c.value.trim();if(db.cats.includes(c))return toast('Category exists');db.cats.push(c);save();route()};
+A.delCat=i=>{const c=db.cats[i];if(db.products.some(p=>p.cats.includes(c)))return toast('Remove it from products first');db.cats.splice(i,1);save();route()};
+/* ---------- router ---------- */
+const badge=()=>{$('#cnt').textContent=db.cart.reduce((s,c)=>s+c.qty,0);const u=me();$('#acct').textContent=u?u.name.split(' ')[0]:'Sign in';$('#acct').href=u?(u.role=='admin'?'#/admin/dash':'#/account/orders'):'#/login'};
+function route(){const[path,qs]=location.hash.slice(1).split('?'),[,pg='home',a,b]=('/'+path.replace(/^\//,'')).split('/'),k=pg||'home',q=new URLSearchParams(qs||'');
+const fn=k=='p'?()=>V.p(q,a):k=='done'?()=>V.done(q,a):k=='admin'?()=>V.admin(q,a):k=='account'?()=>V.account(q,a):V[k]||V.home;
+$('#app').innerHTML=fn(q);document.body.classList.remove('menu');document.title='SOLEWORKS — '+(k=='home'?'Shoes built to move':k[0].toUpperCase()+k.slice(1))}
+addEventListener('hashchange',()=>{route();scrollTo(0,0)});
+(async()=>{if(!db){db=seed();db.users[0].hash=await sha('admin@soleworks.com'+'admin123');save()}badge();route()})();
+</script>
+</body></html>
+
