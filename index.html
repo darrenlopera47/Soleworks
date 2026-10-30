@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SOLEWORKS — Shoes built to move</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css"></head>
+<body>
+<div class="bar">Free shipping on orders over ₱5,000 · Use size guide US 6–12</div>
+<header class="nav"><a class="logo" href="#/">SOLEWORKS</a>
+<button class="burger" onclick="document.body.classList.toggle('menu')" aria-label="Menu">☰</button>
+<nav><a href="#/">Home</a><a href="#/shop">Shop</a><a href="#/categories">Categories</a><a href="#/about">About Us</a><a href="#/contact">Contact</a></nav>
+<form class="search" onsubmit="A.search(event)"><input id="q" placeholder="Search shoes" aria-label="Search shoes"><button>Search</button></form>
+<div class="icons"><a id="acct" href="#/login">Sign in</a><a href="#/cart" class="cart">Cart <b id="cnt">0</b></a></div></header>
+<main id="app"></main>
+<footer><div class="wrap fgrid"><div><div class="logo">SOLEWORKS</div><p>Premium footwear for every pace.<br>Dasmariñas, Cavite, PH<br>hello@soleworks.example · +63 900 000 0000</p></div>
+<div><b>Shop</b><a href="#/shop?cat=Sneakers">Sneakers</a><a href="#/shop?cat=Running Shoes">Running</a><a href="#/shop?cat=Formal Shoes">Formal</a></div>
+<div><b>Follow</b><a href="#" onclick="return false">Facebook</a><a href="#" onclick="return false">Instagram</a><a href="#" onclick="return false">TikTok</a></div></div>
+<p class="copy">© 2026 SOLEWORKS. Demo store — data is saved in your browser.</p></footer>
+<div id="toast"></div>
+<script src="js/config.js"></script>
+<script src="js/utils.js"></script>
+<script src="js/data.js"></script>
+<script src="js/state.js"></script>
+<script src="js/store.js"></script>
+<script src="js/views-store.js"></script>
+<script src="js/views-checkout.js"></script>
+<script src="js/views-account.js"></script>
+<script src="js/views-admin.js"></script>
+<script src="js/actions-shop.js"></script>
+<script src="js/actions-account.js"></script>
+<script src="js/actions-admin.js"></script>
+<script src="js/debug.js"></script>
+<script src="js/router.js"></script></body></html>
